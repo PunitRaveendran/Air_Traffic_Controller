@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(sed -n '122,130p' /c/Users/punit/atc-openenv/inference.py)",
+      "Bash(sed -n '180,192p' /c/Users/punit/atc-openenv/inference.py)",
+      "Bash(sed -n '199,208p' /c/Users/punit/atc-openenv/inference.py)"
+    ]
+  }
+}
