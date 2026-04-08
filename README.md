@@ -120,8 +120,8 @@ python inference.py
 ### Local API Server
 
 ```bash
-# Run the FastAPI Web API server locally after going into the server folder 
-python app.py
+# Run the FastAPI Web API server locally 
+python -m server.app
 ```
 
 ### Docker Setup
