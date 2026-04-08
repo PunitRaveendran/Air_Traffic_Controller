@@ -1,0 +1,20 @@
+name: atc-openenv
+version: "1.0.0"
+description: "Air Traffic Control runway sequencing environment"
+tags: [openenv, atc, scheduling, real-world]
+action_space: discrete
+observation_space: structured
+tasks:
+  - id: 1
+    name: clear_skies
+    difficulty: easy
+  - id: 2
+    name: fuel_pressure
+    difficulty: medium
+  - id: 3
+    name: full_emergency
+    difficulty: hard
+endpoints:
+  reset: POST /reset
+  step: POST /step
+  state: GET /state
