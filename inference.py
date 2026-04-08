@@ -412,12 +412,12 @@ def run_inference(task_id: int, model_name: str, api_base: str, api_key: str) ->
 
 
 def main():
-    api_key = os.getenv("HF_TOKEN") or os.getenv("API_KEY") or "dummy-token"
-    api_base = os.getenv("API_BASE_URL") or "https://router.huggingface.co/v1"
-    model_name = os.getenv("MODEL_NAME") or "Qwen/Qwen2.5-72B-Instruct"
+    API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
+    MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
+    HF_TOKEN = os.getenv("HF_TOKEN")
 
-    print(f"[DEBUG] Starting ATC inference with model: {model_name}")
-    print(f"[DEBUG] API base: {api_base}")
+    print(f"[DEBUG] Starting ATC inference with model: {MODEL_NAME}")
+    print(f"[DEBUG] API base: {API_BASE_URL}")
 
     total_score = 0.0
     results = []
@@ -425,7 +425,7 @@ def main():
     for task_id in [1, 2, 3]:
         print(f"\n[DEBUG] ===== Running Task {task_id} =====")
         try:
-            score, reward, log = run_inference(task_id, model_name, api_base, api_key)
+            score, reward, log = run_inference(task_id, MODEL_NAME, API_BASE_URL, HF_TOKEN)
             results.append({"task_id": task_id, "score": score, "reward": reward})
             total_score += score
         except Exception as e:
