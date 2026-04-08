@@ -120,7 +120,7 @@ python inference.py
 ### Local API Server
 
 ```bash
-# Run the FastAPI Web API server locally
+# Run the FastAPI Web API server locally after going into the server folder 
 python app.py
 ```
 
